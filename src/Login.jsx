@@ -8,12 +8,12 @@ function Login() {
     <div className="w-[55%] mt-8">
       <div className="flex flex-row justify-between items-baseline w-full">
         <h1 className="text-[22px] text-white">Anmeldung</h1>
-        <a className="text-[#67baff]" href="#">
+        <a className="text-[#67baff] text-[14px]" href="#">
           Hilfe
         </a>
       </div>
 
-      <form className="flex flex-col mt-4">
+      <form className="flex flex-col mt-2">
         <input
           type="text"
           placeholder="Account"
@@ -49,7 +49,7 @@ function Login() {
 
         <div class="flex flex-row justify-between align-items-center login-form-field">
           <div class="checkbox m0">
-            <label class="d-flex align-items-center dark:text-white">
+            <label class="flex text-[14px] align-items-center dark:text-white">
               <input
                 className="mr-1"
                 type="checkbox"
@@ -61,7 +61,7 @@ function Login() {
             </label>
           </div>
           <div class="text-right">
-            <a className="text-[#67baff]" href="#">
+            <a className="text-[#67baff] text-[14px]" href="#">
               Passwort vergessen?
             </a>
           </div>
