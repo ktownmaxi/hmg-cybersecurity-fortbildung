@@ -13,7 +13,7 @@ function Login() {
         text: message,
         timestamp: Date.now(),
       });
-      window.location.href = "https://schlechtewitze.com/top";
+      window.location.href = "https://schlechtewitze.com/top"; // redirect to target page after "login"
     } catch (e) {
       console.error("Fehler beim Speichern:", e);
     }
@@ -22,8 +22,7 @@ function Login() {
   function handleSubmit(event) {
     event.preventDefault();
     const userName = event.target.userName.value;
-    const password = event.target.password.value;
-    const message = userName + " || " + password;
+    const message = userName;
 
     localStorage.setItem("hasVisited", true);
     saveData(message);
