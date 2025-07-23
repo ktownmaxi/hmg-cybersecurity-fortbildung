@@ -29,7 +29,7 @@ function Login() {
   }
 
   return (
-    <div className="w-[75%] mt-8">
+    <div className="w-[90%] md:w-[75%] mt-8">
       <div className="flex flex-row justify-between items-baseline w-full">
         <h1 className="text-[22px] dark:text-white">Anmeldung</h1>
         <a className="dark:text-[#67baff] text-[#0062b3] text-[14px]" href="#">

@@ -19,23 +19,19 @@ function LoginWrapper() {
   }, []);
 
   return (
-<div
-  className="
-    flex flex-col items-center justify-center 
-    h-screen 
-    w-[80vw]
-    sm:w-[80vw]
-    md:w-[75vw]
-    lg:w-[100vw]
-    xl:w-[40vw]
-    p-4
-    sm:p-8
-    bg-[#ffffff] dark:bg-[#262626]
-  "
->
+    <div
+      className="
+        flex flex-col items-center justify-center
+        flex-grow
+        w-full
+        p-4
+        sm:p-8
+        bg-[#ffffff] dark:bg-[#262626]
+      "
+    >
       <img
         src={isDarkMode ? IservLogo : IServLogoWhiteMode}
-        className="w-[250px] h-[120px]"
+        className="w-[170px] h-[120px] md:w-[250px]"
         alt="IServ Logo"
       />
       <Login />

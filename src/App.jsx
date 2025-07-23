@@ -2,8 +2,6 @@ import HMGLogo from "./HMGLogo";
 import LoginWrapper from "./LoginWrapper";
 
 import { useEffect } from "react";
-import { db } from "./firebase"; // Pfad ggf. anpassen
-import { collection, addDoc } from "firebase/firestore";
 
 function App() {
   useEffect(() => {
@@ -14,7 +12,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex felx-col items-center justify-center">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <HMGLogo />
       <LoginWrapper />
     </div>
