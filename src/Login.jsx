@@ -32,7 +32,10 @@ function Login() {
     <div className="w-[90%] md:w-[75%] mt-8">
       <div className="flex flex-row justify-between items-baseline w-full">
         <h1 className="text-[22px] dark:text-white">Anmeldung</h1>
-        <a className="dark:text-[#67baff] text-[#0062b3] text-[14px]" href="#">
+        <a
+          className="dark:text-[#67baff] text-[#0062b3] hover:underline text-[14px]"
+          href="#"
+        >
           Hilfe
         </a>
       </div>
@@ -50,28 +53,31 @@ function Login() {
                     focus:shadow-[0_0_10px_#3b82f6]"
         />
 
-        <div
-          className="flex items-center w-full p-2 mb-2 border font-[14px]
+        <div className="w-full font-[14px]">
+          <div
+            className="flex items-center  mb-2 border font-[14px]
                 bg-white text-black border-gray-500
-                dark:bg-[#1a1a1a] dark:text-white dark:border-gray-600
-                focus-within:ring-1 focus-within:ring-blue-400 focus-within:outline-none
-                focus-within:shadow-[0_0_10px_#3b82f6]"
-        >
-          <input
-            type={showPassword ? "text" : "password"}
-            id="password"
-            name="password"
-            placeholder="Passwort"
-            className="dark:text-white pr-0 w-full focus:outline-none"
-          />
-          <div className="h-full border-l border-gray-600 px-3 flex items-center">
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="text-gray-400"
-            >
-              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-            </button>
+                dark:bg-[#1a1a1a] dark:text-white dark:border-gray-600"
+          >
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              placeholder="Passwort"
+              className="dark:text-white pr-0 w-full focus:outline-none p-2
+              focus:ring-1 focus:ring-blue-400
+              focus:shadow-[0_0_10px_#3b82f6]"
+            />
+
+            <div className="ml-0.5 h-full border-l border-gray-600 px-3 flex items-center p-2">
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-gray-400"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -89,7 +95,10 @@ function Login() {
             </label>
           </div>
           <div class="text-right">
-            <a className="dark:text-[#67baff] text-[#0062b3] text-[14px]" href="#">
+            <a
+              className="dark:text-[#67baff] text-[#0062b3] hover:underline text-[14px]"
+              href="#"
+            >
               Passwort vergessen?
             </a>
           </div>
@@ -97,7 +106,7 @@ function Login() {
 
         <button
           type="submit"
-          className="dark:bg-[#67baff] bg-[#0062b3] dark:text-black text-white hover:bg-blue-600 mt-10 p-2"
+          className="dark:bg-[#67baff] bg-[#0062b3] dark:text-black text-white hover:bg-blue-600 dark:hover:bg-blue-300 mt-10 p-2"
         >
           → Anmelden
         </button>
